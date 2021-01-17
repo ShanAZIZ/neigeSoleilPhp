@@ -1,2 +1,1 @@
-<?php
-	require_once ""
+<h1>REGISTER</h1>

@@ -1,0 +1,1 @@
+<h2>Ici la gestion de l'affichage des locations</h2>
