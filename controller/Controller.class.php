@@ -20,14 +20,37 @@
         public function delete($tab){
             $this->unModele->delete($tab);
         }
-        public function selectWhere($tab, $where){
-            return $this->unModele->selectWhere($tab, $where);
+
+        public function selectWhereId($tab,$idChamp,$id)
+        {
+            $this->unModele->selectWhereId($tab,$idChamp,$id);
         }
-        public function update ($tab, $where){
-            $this->unModele->update($tab, $where);
+
+        /* authentification sur php */
+        public function initPhpSession() : bool
+        {
+            if(!session_id()){
+                session_start();
+                session_regenerate_id();
+                return true;
+            }
+            return false;
         }
-        public function selectLike($tab, $mot){
-            return $this->unModele->selectLike($tab, $mot);
+
+        public function verifyUser($mail, $password)
+        {
+            return $this->unModele->verifyUser($mail, $password);
+        }
+
+        public function cleanPhpSession()
+        {
+            session_unset();
+            session_destroy();
+        }
+
+        public function is_logged() : bool 
+        {
+            return true;
         }
 
     }
