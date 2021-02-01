@@ -26,6 +26,11 @@
             $this->unModele->selectWhereId($tab,$idChamp,$id);
         }
 
+        public function selectWhere($tab,$where)
+        {
+            return $this->unModele->selectWhere($tab,$where);
+        }
+
         /* authentification sur php */
         public function initPhpSession() : bool
         {

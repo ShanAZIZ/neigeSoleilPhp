@@ -97,7 +97,7 @@
                     $donnees[":".$cle] = $valeur;
                 }
                 $ChaineChamps = implode(",",$listeChamps);
-                $requete = " delete from ".$this->uneTable."WHERE"." ".$ChaineChamps.";"; //AVOID SONARLINT SS1192
+                $requete = " delete from ".$this->uneTable." "."WHERE"." ".$ChaineChamps.";"; //AVOID SONARLINT SS1192
                 $delete = $this->unPdo->prepare($requete);
                 $delete->execute($donnees);
             }
@@ -117,10 +117,10 @@
                 }
                 $chaineChamps = implode(" and ", $listeChamps);
 
-                $requete = "select ".$chaine." from ".$this->uneTable."WHERE"." ".$chaineChamps.";";
+                $requete = "select ".$chaine." from ".$this->uneTable." WHERE"." ".$chaineChamps.";";
                 $select = $this->unPdo->prepare ($requete);
                 $select->execute ($donnees);
-                return $select->fetch (); //un seul résultat.
+                return $select->fetchAll();
             }
             else
             {
@@ -146,7 +146,7 @@
                 }
                 $chaineChamps = implode(" and ", $listeChamps);
                 $chaineValeurs = implode (", ", $listeValeurs);
-                $requete = "update ".$this->uneTable." set ".$chaineValeurs."WHERE ".$chaineChamps.";";
+                $requete = "update ".$this->uneTable." set ".$chaineValeurs." WHERE ".$chaineChamps.";";
 
                 $update = $this->unPdo->prepare ($requete);
                 $update->execute ($donnees);
@@ -164,7 +164,7 @@
                 $chaineChamps = implode(" or ", $listeChamps);
                 $donnees = array(":mot"=>"%".$mot."%");
 
-                $requete =" select * from ".$this->uneTable."WHERE ".$chaineChamps ;
+                $requete =" select * from ".$this->uneTable." WHERE ".$chaineChamps ;
 
                 $select = $this->unPdo->prepare ($requete);
                 $select->execute ($donnees);

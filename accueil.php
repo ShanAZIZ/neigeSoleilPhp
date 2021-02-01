@@ -53,7 +53,7 @@
     <h1>Bienvenue sur Neige et Soleil</h1>
     <p class="lead">Pour continuer a naviguer et profiter de nos meilleurs offres, vous devez vous connecter a votre compte. Ou bien en creer un</p>
     <p class="lead">
-      <a href="index.php?page=1" class="btn btn-lg btn-secondary fw-bold border-white bg-white">C'est partit</a>
+      <a href="index.php?page=1&menu=0" class="btn btn-lg btn-secondary fw-bold border-white bg-white">C'est partit</a>
     </p>
   </main>
 

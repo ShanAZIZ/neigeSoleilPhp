@@ -9,7 +9,7 @@
 			require_once("accueil.php");
 			break;
 		case 1:
-			require_once("gestionDashboard.php");
+			require_once("gestionAdmin.php");
 			break;
 		case 2:
 			require_once("authentication.php");
